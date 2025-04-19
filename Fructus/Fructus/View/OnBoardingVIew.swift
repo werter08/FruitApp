@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct OnBoardingVIew: View {
+    
+    var fruits: [Fruit] = fruitsData
+    
     var body: some View {
         TabView {
-            FruitCardView()
-            FruitCardView()
-            FruitCardView()
-            FruitCardView()
+            ForEach(fruits) { fruit in
+                FruitCardView(fruit: fruit)
+            }
+            
         }
         .tabViewStyle(PageTabViewStyle())
         .padding(.vertical, 20)
