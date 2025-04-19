@@ -46,7 +46,21 @@ struct SetingsView: View {
                             .multilineTextAlignment(.leading)
                             .font(.footnote)
                         Toggle(isOn: $onBoarding) {
-                            Text("Restart".uppercased())
+                            if onBoarding {
+                                Text("Restarted".uppercased())
+                                    .foregroundStyle(Color.green)
+                                    .fontWeight(.bold)
+                            } else {
+                                Text("Restart".uppercased())
+                                    .foregroundStyle(Color.secondary)
+                                    .fontWeight(.bold)
+                            }
+                        }
+                        .padding()
+                        .background(){
+                            Color(UIColor.tertiarySystemBackground)
+                                .clipShape( RoundedRectangle(cornerRadius: 8, style: .continuous))
+                              
                         }
                     }
                     
